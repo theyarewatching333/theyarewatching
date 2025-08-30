@@ -1,39 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
   <title>They Are Watching</title>
   <style>
     body {
       margin: 0;
-      background-color: black;
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       height: 100vh;
-      font-family: "Times New Roman", serif;
-      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #000 url('hidden-image.jpg') no-repeat center center;
+      background-size: cover;
+
+      /* Make it look pure black */
+      filter: brightness(0);
     }
 
-    #text {
-      font-size: 2em;
+    h1 {
+      color: white;
+      font-family: serif;
+      font-size: 3em;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
-  <div id="text">they are watching</div>
+  <h1 onclick="playWhisper()">they are watching</h1>
 
-  <audio id="creepyaudio" src="whisper.mp3"></audio>
+  <audio id="whisper" src="whisper.mp3"></audio>
 
   <script>
-    const text = document.getElementById("text");
-    const audio = document.getElementById("creepyaudio");
-
-    text.addEventListener("click", () => {
-      audio.play();
-    });
+    function playWhisper() {
+      document.getElementById("whisper").play();
+    }
   </script>
 </body>
 </html>
