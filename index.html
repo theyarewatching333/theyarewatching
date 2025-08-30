@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>They Are Watching</title>
   <style>
-    /* Fullscreen background */
+    /* Fullscreen black with hidden image */
     body {
       margin: 0;
       height: 100vh;
@@ -16,9 +16,9 @@
       background-color: black; /* fallback */
     }
 
-    /* Creepy centered text */
+    /* Big creepy white text */
     h1 {
-      color: white;
+      color: #ffffff;  /* white text */
       font-family: serif;
       font-size: 3em;
       cursor: pointer;
@@ -29,13 +29,13 @@
 <body>
   <h1 onclick="playWhisper()">they are watching</h1>
 
-  <!-- Audio -->
+  <!-- Whisper audio -->
   <audio id="whisper" src="whisper.mp3"></audio>
 
   <script>
     function playWhisper() {
       const audio = document.getElementById("whisper");
-      audio.currentTime = 0; // restart audio if clicked again
+      audio.currentTime = 0; // restart if clicked again
       audio.play();
     }
   </script>
