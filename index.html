@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>They Are Watching</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: black;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: "Times New Roman", serif;
+      cursor: pointer;
+    }
+
+    #text {
+      font-size: 2em;
+    }
+  </style>
+</head>
+<body>
+  <div id="text">they are watching</div>
+
+  <audio id="creepyaudio" src="whisper.mp3"></audio>
+
+  <script>
+    const text = document.getElementById("text");
+    const audio = document.getElementById("creepyaudio");
+
+    text.addEventListener("click", () => {
+      audio.play();
+    });
+  </script>
+</body>
+</html>
