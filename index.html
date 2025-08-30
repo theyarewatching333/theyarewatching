@@ -4,35 +4,39 @@
   <meta charset="UTF-8">
   <title>They Are Watching</title>
   <style>
+    /* Fullscreen background */
     body {
       margin: 0;
       height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #000 url('hidden-image.jpg') no-repeat center center;
+      background: url('hidden-bg.jpg') no-repeat center center;
       background-size: cover;
-
-      /* Make it look pure black */
-      filter: brightness(0);
+      background-color: black; /* fallback */
     }
 
+    /* Creepy centered text */
     h1 {
       color: white;
       font-family: serif;
       font-size: 3em;
       cursor: pointer;
+      user-select: none;
     }
   </style>
 </head>
 <body>
   <h1 onclick="playWhisper()">they are watching</h1>
 
+  <!-- Audio -->
   <audio id="whisper" src="whisper.mp3"></audio>
 
   <script>
     function playWhisper() {
-      document.getElementById("whisper").play();
+      const audio = document.getElementById("whisper");
+      audio.currentTime = 0; // restart audio if clicked again
+      audio.play();
     }
   </script>
 </body>
